@@ -10,8 +10,8 @@ if ($name == "login") :
                         <h5 class="card-title text-center mb-5 fw-light fs-5">Masuk</h5>
                         <form method="POST">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Username123" name="name">
-                                <label for="floatingInput">Name</label>
+                                <input type="text" class="form-control" id="floatingInput" placeholder="1031191xxxxxx" name="nrp">
+                                <label for="floatingInput">NRP / NIP / NPP</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">

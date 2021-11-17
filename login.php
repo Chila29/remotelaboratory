@@ -16,26 +16,29 @@ if($_SESSION){
     }
 }
 if (isset($_POST["login"])) {
-    $name = $_POST["name"];
+    $nrp = $_POST["nrp"];
     $password = $_POST["password"];
     $hak = $_POST["hak"];
-    $query = mysqli_query($conn, "SELECT * FROM user WHERE nama='" . $name . "' AND password='" . $password . "'")
+    $query = mysqli_query($conn, "SELECT * FROM user WHERE nrp='" . $nrp . "' AND password='" . $password . "'")
         or die('Error: ' . mysqli_connect_error());
+    $name = mysqli_query($conn, "SELECT * FROM user WHERE nrp='" . $nrp . "'")
+        or die('Error: ' . mysqli_connect_error());
+    $name = mysqli_fetch_array($name);
     if (mysqli_num_rows($query) > 0) {
         global $row;
         $row = mysqli_fetch_assoc($query);
         if($row["hak"] == "admin"){
-            $_SESSION["name"] = $name;
+            $_SESSION["name"] = $name['nama'];
             $_SESSION["hak"] = "admin";
             $_SESSION["id"] = $row["user_id"];
             header("location: dashboards/Dashboard.php");
         }else if($row["hak"] == "dosen"){
-            $_SESSION["name"] = $name;
+            $_SESSION["name"] = $name['nama'];
             $_SESSION["hak"] = "dosen";
             $_SESSION["id"] = $row["user_id"];
             header("location: dashboards/dosen.php");
         }else if($row["hak"] == "mahasiswa"){
-            $_SESSION["name"] = $name;
+            $_SESSION["name"] = $name['nama'];
             $_SESSION["hak"] = "mahasiswa";
             $_SESSION["id"] = $row["user_id"];
             header("location: dashboards/mahasiswa.php");
