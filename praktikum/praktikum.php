@@ -4,10 +4,9 @@ include('../component/connectdb.inc.php');
 include('../component/head.inc.php');
 include('../component/navbardash.inc.php');
 include_once('../functions.php');
+updateStatusPrakMahasiswa(1, $_SESSION["id"]);
 $sql = "UPDATE praktikum SET status_code='1' WHERE id_prak='1'";
 mysqli_query($conn, $sql);
-mysqli_query($conn, "UPDATE waiting_list SET status_prak= 1 WHERE nama='" . $_SESSION['name'] . "'");
-$result = mysqli_query($conn, "SELECT * FROM hasilpraktikum");
 // $users = mysqli_query($conn, "SELECT * FROM user WHERE hak='mahasiswa'");
 ?>
 <div class="mb-5">
@@ -262,7 +261,7 @@ if (isset($_POST['selesai'])) {
     echo "<script>Swal.fire({
         icon: 'success',
         title: 'Berhasil!',
-        text: 'WES MARI PRAKTIKUM E, SILAHKAN HUBUNGI DOSEN'})</script>";
+        text: 'Praktikum sudah selesai. Silahkan hubungi dosen untuk lebih lanjutnya'})</script>";
 }
 
 ?>

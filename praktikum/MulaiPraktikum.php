@@ -83,7 +83,7 @@ $urutan_skrg = mysqli_fetch_assoc($cek_user);
     <div class="align-items-center">
       <form action="" method="POST">
         <button class="btn btn-primary mb-1" name="start">Mulai Praktikum</button>
-        <button class="btn btn-primary mb-1" name="antrian">Antri!</button>
+        <!-- <button class="btn btn-primary mb-1" name="antrian">Antri!</button> -->
         <!-- <button class="btn btn-primary mb-1">Breaking</button>
         <button class="btn btn-primary mb-1">Pengaturan Kecepatan</button>
         <button class="btn btn-primary mb-1">Pengaturan Arah Putar</button>
@@ -96,32 +96,34 @@ $urutan_skrg = mysqli_fetch_assoc($cek_user);
 <?php
 include('../component/footer.inc.php');
 if (isset($_POST["start"])) {
-  if ($user_praktikum == 1) {
-    $ihir = $urutan_skrg['no_antrian'];
-    if ($urutan_skrg['id_user'] == $_SESSION['id']) {
-      header("location: praktikum.php?prak_id=" . $_GET["prak_id"]);
-      exit();
-    } else {
-      echo "<script>Swal.fire({
-      icon: 'error',
-      title: 'Silahkan Tunggu',
-      text: 'Sekarang antrian ke-$ihir.'})</script>";
-    }
-  } else if ($user_praktikum == null) {
-    $no_antrian = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM antrian WHERE sudah_prak = 1"));
-    $urutan_user = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM antrian WHERE id_user='" . $_SESSION['id'] . "'"));
-    if ($no_antrian == $urutan_user['no_antrian']) {
-      header("location: praktikum.php?prak_id=" . $_GET["prak_id"]);
-      exit();
-    } else {
-      echo "<script>Swal.fire({
-        icon: 'error',
-        title: 'Silahkan Tunggu',
-        text: 'Anda bukan urutan ke-$no_antrian.'})</script>";
-    }
-  }
+  header("location: praktikum.php?prak_id=" . $_GET["prak_id"]);
+  exit();
+  // if ($user_praktikum == 1) {
+  //   $ihir = $urutan_skrg['no_antrian'];
+  //   if ($urutan_skrg['id_user'] == $_SESSION['id']) {
+  //     header("location: praktikum.php?prak_id=" . $_GET["prak_id"]);
+  //     exit();
+  //   } else {
+  //     echo "<script>Swal.fire({
+  //     icon: 'error',
+  //     title: 'Silahkan Tunggu',
+  //     text: 'Sekarang antrian ke-$ihir.'})</script>";
+  //   }
+  // } else if ($user_praktikum == null) {
+  //   $no_antrian = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM antrian WHERE sudah_prak = 1"));
+  //   $urutan_user = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM antrian WHERE id_user='" . $_SESSION['id'] . "'"));
+  //   if ($no_antrian == $urutan_user['no_antrian']) {
+  //     header("location: praktikum.php?prak_id=" . $_GET["prak_id"]);
+  //     exit();
+  //   } else {
+  //     echo "<script>Swal.fire({
+  //       icon: 'error',
+  //       title: 'Silahkan Tunggu',
+  //       text: 'Anda bukan urutan ke-$no_antrian.'})</script>";
+  //   }
+  // }
 }
-if (isset($_POST["antrian"])) {
-  addToWaitingList($_SESSION);
-}
+// if (isset($_POST["antrian"])) {
+//   addToWaitingList($_SESSION);
+// }
 ?>
