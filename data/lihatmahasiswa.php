@@ -2,9 +2,9 @@
 $hal = "dashboard";
 include('../component/head.inc.php');
 include('../component/navbardash.inc.php');
-if ($_SESSION["hak"] != "2" & $_SESSION["hak"] != "1") {
+if ($_SESSION["hak"] != "dosen" & $_SESSION["hak"] != "admin") {
   echo "Anda bukan dosen"; ?>
-  <a href="../logout.php">Kembali</a>
+  <a href="../dashboards/mahasiswa.php">Kembali</a>
 <?php
 } else {
 $conn = mysqli_connect("localhost", "root", "", "remotlab");
