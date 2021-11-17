@@ -110,9 +110,13 @@ mysqli_query($conn, $sql);
                                 <button class="btn btn-primary forward text-center" value="1" name="forward" id="forward"> Forward Start</button>
                             </div>
                             <h5 for="reverse">Reverse Start</h5>
-                            <button class="btn btn-primary reverse" value="1" name="reverse" id="reverse">Reverse Start</button>
+                            <div class="col lg-12">
+                                <button class="btn btn-primary reverse text-center" value="1" name="reverse" id="reverse">Reverse Start</button>
+                            </div>
                             <h5 for="stop">Stop</h5>
-                            <button class="btn btn-primary stop" value="0" name="stop" id="stop">Stop</button>
+                            <div class="col lg-12">
+                                <button class="btn btn-primary stop text-center" value="0" name="stop" id="stop">Stop</button>
+                            </div>
                             <script>
                                 $(document).ready(function() {
                                     $('.forward').click(function(e) {

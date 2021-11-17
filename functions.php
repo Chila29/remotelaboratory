@@ -57,10 +57,10 @@ function cekFoto($id)
     $query = mysqli_query($conn, $sql);
     return (mysqli_num_rows($query) > 0);
 }
-function updateStatusPrakMahasiswa($session)
+function updateStatusPrakMahasiswa($stat, $id)
 {
     global $conn;
-    $sql = "SELECT status_prak FROM waiting_list WHERE name=" . $session["name"];
+    $sql = "UPDATE user SET status_prak=$stat WHERE user_id=" . $id;
     mysqli_query($conn, $sql);
 }
 function cekPrak($id)
