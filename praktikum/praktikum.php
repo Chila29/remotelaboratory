@@ -72,6 +72,7 @@ mysqli_query($conn, $sql);
             }
         </script>
         <div class="col-lg-6">
+            <h4>Tabel Monitoring</h4>
             <div class="table-responsive">
                 <table class="table align-items-center table-flush" id="mauexport">
                     <thead class="thead-light">
