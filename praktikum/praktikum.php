@@ -196,29 +196,27 @@ mysqli_query($conn, $sql);
                 <div class="col-lg-7">
                     <h4>Knob Frekuensi (Hz)</h4>
                     <form method="POST" id="volt">
-                        <input type="text" value="3" class="dial" name="hertz" id="hert">
+                        <div class="row">
+                            <div class="knob" id="knob1"></div>
+                        </div>
+                        <button class="btn btn-primary hertz" name="hertz" id="hertz" style="margin-top: 55%;">Ganti Frekuensi</button>
                         <script>
-                            $('.dial').knob({
-                                'min': 0,
-                                'max': 50,
-                                'step': 0.1,
-                                'width': 200,
-                                'height': 200,
-                                'displayInput': true,
-                                'fgColor': "#FF0000",
-                                'angleArc': 180,
-                                'angleOffset': -90,
+                            let dial1 = new Knob({
+                                id: "knob1",
+                                size: "xlarge",
+                                type: "Hippy",
+                                lowVal: 0,
+                                highVal: 50,
+                                lblTxtColor: "red"
                             });
-                        </script>
-                        <br>
-                        <input type="submit" class="btn btn-primary" name="submit" value="Ganti Frekuensi" id="ganti">
-                        <script>
                             $(document).ready(function() {
-                                $('#volt').on('submit', function(e) {
+                                $('.hertz').click(function(e) {
                                     $.ajax({
                                         type: "POST",
                                         url: "../_actions/sendHertz.php",
-                                        data: $('#volt').serialize(),
+                                        data: {
+                                            hertz: dial1.getValue()
+                                        },
                                         success: function() {
                                             const Toast = Swal.mixin({
                                                 toast: true,

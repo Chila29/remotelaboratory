@@ -18,7 +18,7 @@ if($_SESSION){
 if (isset($_POST["login"])) {
     $nrp = $_POST["nrp"];
     $password = $_POST["password"];
-    $hak = $_POST["hak"];
+    // $hak = $_POST["hak"];
     $query = mysqli_query($conn, "SELECT * FROM user WHERE nrp='" . $nrp . "' AND password='" . $password . "'")
         or die('Error: ' . mysqli_connect_error());
     $name = mysqli_query($conn, "SELECT * FROM user WHERE nrp='" . $nrp . "'")

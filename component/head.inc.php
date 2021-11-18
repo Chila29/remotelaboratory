@@ -31,7 +31,7 @@
     <!-- Sweet Alert JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <!-- <script type="text/javascript" src="../js/kecepatan.js"></script> -->
+    <script type="text/javascript" src="../js/knobs.js"></script>
   <?php elseif ($hal == "about") : ?>
     <!-- Sweet Alert -->
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
