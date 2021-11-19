@@ -137,7 +137,7 @@ mysqli_query($conn, $sql);
 
                                                 Toast.fire({
                                                     icon: 'success',
-                                                    title: 'START FORWARD!!!'
+                                                    title: 'Forward Start'
                                                 })
                                             }
                                         })
@@ -160,7 +160,7 @@ mysqli_query($conn, $sql);
 
                                                 Toast.fire({
                                                     icon: 'success',
-                                                    title: 'START REVERSE!!!'
+                                                    title: 'Reverse Start'
                                                 })
                                             }
                                         })
@@ -183,7 +183,7 @@ mysqli_query($conn, $sql);
 
                                                 Toast.fire({
                                                     icon: 'success',
-                                                    title: 'STOP!!!'
+                                                    title: 'Motor akan berhenti'
                                                 })
                                             }
                                         })
@@ -228,7 +228,7 @@ mysqli_query($conn, $sql);
 
                                             Toast.fire({
                                                 icon: 'success',
-                                                title: 'Frekuensi diubah'
+                                                title: 'Frekuensi sedang diubah'
                                             })
                                         }
                                     })
@@ -264,7 +264,7 @@ if (isset($_POST['selesai'])) {
     echo "<script>Swal.fire({
         icon: 'success',
         title: 'Berhasil!',
-        text: 'Praktikum sudah selesai. Silahkan hubungi dosen untuk lebih lanjutnya'})</script>";
+        text: 'Praktikum sudah selesai. Silahkan hubungi dosen.'})</script>";
 }
 
 ?>
