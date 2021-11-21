@@ -13,4 +13,4 @@
         $antrian = $noAntrian['no_antrian'] + 1;
     }
     mysqli_query($conn, "insert into antrian set id_praktikum = '1', id_user = '".$_SESSION['id']."', no_antrian = '$antrian', waktu_antrian = '".date('Y-m-d H:i:s')."' ");
-    header('location:../data/antrian.php?setAntrian=success');
+    header('location:../dashboards/antrian.php?setAntrian=success');
