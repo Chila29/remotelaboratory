@@ -1,4 +1,5 @@
 <?php
+$halam = 'users';
 include('../component/header.inc.php');
 include('../component/navbar.php');
 include('../component/sidebar.php');

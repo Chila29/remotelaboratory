@@ -22,35 +22,13 @@ mysqli_query($conn, $sql);
             <div class="col-lg-3 text-end">
                 <div class="card">
                     <div class="card-body">
-                        <div id="DigitalCLOCK" class="clock" onload="showTime();"></div>
+                        <a href="https://time.is/Surabaya" id="time_is_link" rel="nofollow" style="font-size:20px">Waktu Praktikum:</a>
+                        <span id="Surabaya_z41c" style="font-size:20px"></span>
+                        <script src="//widget.time.is/t.js"></script>
                         <script>
-                            function showTime() {
-                                var date = new Date();
-                                var h = date.getHours();
-                                var m = date.getMinutes();
-                                var s = date.getSeconds();
-                                var session = "AM";
-
-                                if (h == 0) {
-                                    h = 12;
-                                }
-
-                                if (h > 12) {
-                                    h = h - 12;
-                                    session = "PM";
-                                }
-
-                                h = (h < 10) ? "0" + h : h;
-                                m = (m < 10) ? "0" + m : m;
-                                s = (s < 10) ? "0" + s : s;
-
-                                var time = h + ":" + m + ":" + s + " " + session;
-                                document.getElementById("DigitalCLOCK").innerText = time;
-                                document.getElementById("DigitalCLOCK").textContent = time;
-
-                                setTimeout(showTime, 1000);
-
-                            }
+                            time_is_widget.init({
+                                Surabaya_z41c: {}
+                            });
                         </script>
                     </div>
                 </div>

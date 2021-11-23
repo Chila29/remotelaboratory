@@ -36,8 +36,8 @@ if ($_SESSION["hak"] != "dosen" & $_SESSION["hak"] != "admin") {
                   <div class="card">
                     <div class="card-body">
                       <h6 class="card-title">Praktikum Kontrol Gerak</h6>
-                      <h5 class="card-title">Nama : <?= $row["nama"]; ?> </h5>
-                      <h5 class="card-title">NRP : <?= $row["nrp"]; ?></h5>
+                      <h5>Nama : <?= $row["nama"]; ?> </h5>
+                      <h5>NRP : <?= $row["nrp"]; ?></h5>
                       <!-- Table with stripped rows -->
                       <div class="card">
                         <div class="card-body">

@@ -27,7 +27,7 @@
     <li class="nav-heading">Users</li>
     <?php if ($_SESSION['hak'] == 'admin') : ?>
       <li class="nav-item">
-        <a class="nav-link" href="../dashboards/users.php">
+        <a class="nav-link <?= ($halam == 'users') ? '' : 'collapsed' ?>" href="../dashboards/users.php">
           <i class="bi bi-person"></i>
           <span>Users</span>
         </a>

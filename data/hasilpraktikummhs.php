@@ -23,17 +23,15 @@ $row = mysqli_fetch_assoc($users);
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
-
                 <div class="card">
                     <section class="section">
                         <div class="row">
                             <div class="col-lg-12">
-
                                 <div class="card">
                                     <div class="card-body">
                                         <h6 class="card-title">Praktikum Kontrol Gerak</h6>
-                                        <h5 class="card-title">Nama : <?= $_SESSION["name"]; ?> </h5>
-                                        <h5 class="card-title">NRP : <?= $row["nrp"]; ?></h5>
+                                        <h5>Nama : <?= $_SESSION["name"]; ?> </h5>
+                                        <h5>NRP : <?= $row["nrp"]; ?></h5>
                                         <!-- Table with stripped rows -->
                                         <div class="card">
                                             <div class="card-body">
