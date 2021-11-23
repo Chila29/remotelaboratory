@@ -1,9 +1,21 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
-  <div class="d-flex align-items-center justify-content-between">
-    <a href="index.php" class="logo d-flex align-items-center">
-      <img src="../assets/img/logo.png" alt="">
-      <span class="d-none d-lg-block">Remote Lab</span>
-    </a>
+  <div class="d-flex align-items-center justify-content-start">
+    <?php if ($_SESSION['hak'] == "admin") : ?>
+      <a href="../dashboards/admin.php" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block" style="margin-left: 10px;">Remote Laboratory <h6>Praktikum Online</h6></span>
+      </a>
+    <?php elseif ($_SESSION['hak'] == "dosen") : ?>
+      <a href="../dashboards/dosen.php" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block" style="margin-left: 10px;">Remote Laboratory <h6>Praktikum Online</h6></span>
+      </a>
+    <?php else : ?>
+      <a href="../dashboards/mahasiswa.php" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block" style="margin-left: 10px;">Remote Laboratory <h6>Praktikum Online</h6></span>
+      </a>
+    <?php endif; ?>
     <i class="bi bi-list toggle-sidebar-btn"></i>
   </div><!-- End Logo -->
   <nav class="header-nav ms-auto">
@@ -24,7 +36,7 @@
           <h6><?= $_SESSION["name"]; ?></h6>
           <span><?= $_SESSION['nrp']; ?></span>
           <br>
-          <span><?= strtoupper($_SESSION["hak"]);?></span>
+          <span><?= strtoupper($_SESSION["hak"]); ?></span>
         </li>
         <li>
           <hr class="dropdown-divider">
@@ -53,7 +65,7 @@
             <span>Keluar</span>
           </a>
         </li>
-      </ul><!-- End Profile Dropdown Items -->
+      </ul>
     </ul>
-  </nav><!-- End Icons Navigation -->
-</header><!-- End Header -->
+  </nav>
+</header>

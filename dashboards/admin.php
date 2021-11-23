@@ -27,13 +27,13 @@ if ($_SESSION["hak"] != "admin") {
   <main id="main" class="main">
     <section class="section dashboard">
       <div class="row">
-
         <div class="col-lg-12">
           <div class="row">
             <div class="col-xxl-4 col-md-6">
+              <!-- BUAT PRAKTIKUM KE SATU -->
               <div class="card info-card sales-card">
                 <div class="card-body">
-                  <h5 class="card-title">Praktikum 1 <span>Motor Inverse Adam </span></h5>
+                  <h5 class="card-title">Praktikum 1 <span>Motor Induksi 3 Fasa </span></h5>
                   <div class="d-flex align-items-center">
                     <div class="ps-3">
                       <span class="text-muted small pt-2 ps-1">Pada praktikum ini, mahasiswa dapat mengendalikan Motor induksi 3 Fasa melalui website, dimana pada modul praktikum terdapat sebuah inverter untuk mengatur kecepatan motor dan merubah arah putaran motor agar dapat berputar secara forward atau reverse. Untuk dapat diakses secara jarak jauh melalui website, pada modul praktikum diberikan sebuah Data Aquisition Module yang berfungsi mengakuisi data yang diperoleh dari praktikum motor.</span>
@@ -44,15 +44,12 @@ if ($_SESSION["hak"] != "admin") {
               </div>
             </div>
           </div>
-        </div><!-- End Customers Card -->
-
-
-        <!-- Recent Sales -->
+        </div>
         <div class="col-12">
+          <!-- BUAT VIDEO TUTORIAL -->
           <div class="card recent-sales">
             <div class="card-body">
               <h5 class="card-title">Video Tutorial</h5>
-
               <tr>
                 <th class="ml-3">
                   <iframe width="320" height="240" src="https://www.youtube.com/embed/AQqyGNOP_3o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -68,7 +65,7 @@ if ($_SESSION["hak"] != "admin") {
         </div>
       </div>
     </section>
-  </main><!-- End #main -->
+  </main>
 <?php
 }
 include('../component/footer.inc.php');

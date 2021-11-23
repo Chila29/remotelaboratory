@@ -58,7 +58,6 @@ mysqli_query($conn, $sql);
         </div>
     </nav>
 </div>
-<!-- <h1>WIRING DIAGRAM INTERAKTIF GAERO</h1> -->
 <div class="row ml-2 justify-content-center align-item-center text-center">
     <div class="col-lg-6">
         <div class="card px-2" style="margin-left: 20px; margin-right:10px;">
@@ -261,9 +260,12 @@ mysqli_query($conn, $sql);
                     <div class="card-body">
                         <h4 class="card-title"><i class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Arahkan mouse pada bagian tengah knob, jika ingin menambah frekuensi drag ke atas, drag ke bawah jika ingin mengurangi frekuensi"></i> Knob Frekuensi (Hz)</h4>
                         <div class="row">
-                            <div class="knob" id="knob1"></div>
+                            <div class="knob" id="knob1" tabindex="-1"></div>
+                            <input-knob value="50" scale="10" min="0" max="100"></input-knob>
                         </div>
                         <button class="btn btn-primary hertz" name="hertz" id="hertz" style="margin-top: 70%;">Ganti Frekuensi</button>
+                        <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#wiring">Wiring Diagram, KLIK!</button>
+                        <?php include('../component/wiringdiagram.php'); ?>
                         <script>
                             let dial1 = new Knob({
                                 id: "knob1",

@@ -46,6 +46,7 @@ include('connectdb.inc.php');
   <script src="../assets/js/knobs.js"></script>
   <!-- clock -->
   <script src="../assets/js/clock.js"></script>
+  <script src="https://unpkg.com/input-knob"></script>
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.1.0
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -53,5 +54,9 @@ include('connectdb.inc.php');
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
 <body>
+<?php
+if($_SESSION['id'] == ''){
+  header("location: ../login.php");
+}
+?>
