@@ -107,9 +107,9 @@ include('component/connectdb.inc.php'); ?>
                       $nrp = $_POST["nrp"];
                       $password = $_POST["password"];
                       // $hak = $_POST["hak"];
-                      $query = mysqli_query($conn, "SELECT * FROM user WHERE nrp='" . $nrp . "' AND password='" . $password . "'")
+                      $query = mysqli_query($conn, "SELECT * FROM users WHERE nrp='" . $nrp . "' AND password='" . $password . "'")
                         or die('Error: ' . mysqli_connect_error());
-                      $name = mysqli_query($conn, "SELECT * FROM user WHERE nrp='" . $nrp . "'")
+                      $name = mysqli_query($conn, "SELECT * FROM users WHERE nrp='" . $nrp . "'")
                         or die('Error: ' . mysqli_connect_error());
                       $name = mysqli_fetch_array($name);
                       if (mysqli_num_rows($query) > 0) {
